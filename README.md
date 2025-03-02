@@ -33,6 +33,9 @@ pip install -e .
 pip install -e ."[api]"
 ```
 
+```bash
+pip install openai
+```
 
 
 ### User Guide
