@@ -175,7 +175,7 @@ for line in f:
     lines = line.strip().split(',')
     replace_dict[lines[0]] = lines[1]
 f.close()
-print(replace_dict)
+#print(replace_dict)
 
 
 
