@@ -4,6 +4,7 @@ import copy
 import itertools
 import json
 import logging
+import os
 from functools import cached_property
 from typing import (
     Any,
@@ -22,6 +23,7 @@ from typing import (
 
 try:
     import requests
+    from openai import OpenAI
     from aiohttp import ClientSession, ClientTimeout, TCPConnector
     from tenacity import RetryError, retry, stop_after_attempt, wait_exponential
     from tqdm import tqdm
@@ -172,6 +174,7 @@ class TemplateAPI(TemplateLM):
                     revision=revision,
                     use_fast=use_fast_tokenizer,
                 )
+        self.client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY", None), base_url="https://api.deepseek.com")
 
     @abc.abstractmethod
     def _create_payload(
@@ -373,11 +376,18 @@ class TemplateAPI(TemplateLM):
                 headers=self.header,
                 verify=self.verify_certificate,
             )
-            if not response.ok:
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=self.create_message(messages),
+                stream=False
+            )
+            #print(response.json())
+            #print(messages)
+            '''if not response.ok:
                 eval_logger.warning(
                     f"API request failed with error message: {response.text}. Retrying..."
                 )
-            response.raise_for_status()
+            response.raise_for_status()'''
             return response.json()
         except RetryError:
             eval_logger.error(
@@ -407,18 +417,11 @@ class TemplateAPI(TemplateLM):
         )
         cache_method = "generate_until" if generate else "loglikelihood"
         try:
-            async with session.post(
-                self.base_url,
-                json=payload,
-                headers=self.header,
+            async with self.client.chat.completions.create(
+                model="deepseek-chat",
+                messages=self.create_message(messages),
+                stream=False
             ) as response:
-                if not response.ok:
-                    error_text = await response.text()
-                    eval_logger.warning(
-                        f"API request failed with error message: {error_text}. Retrying..."
-                    )
-                # raising exception will retry the request
-                response.raise_for_status()
                 outputs = await response.json()
             answers = (
                 self.parse_generations(
