@@ -168,6 +168,16 @@ def acc_norm_fn(items):  # This is a passthrough function
 def acc_mutual_info_fn(items):  # This is a passthrough function
     return items
 
+replace_dict = {}
+f = open('math-500_replace.txt')
+for line in f:
+    line = line.replace('\\\\', '\\')
+    lines = line.strip().split(',')
+    replace_dict[lines[0]] = lines[1]
+f.close()
+print(replace_dict)
+
+
 
 ### the code used in the `exact_match_hf_evaluate` function is ported from
 ### https://github.com/huggingface/evaluate/blob/main/metrics/exact_match/exact_match.py
@@ -195,6 +205,22 @@ def exact_match_hf_evaluate(
     ignore_punctuation=False,
     ignore_numbers=False,
 ):
+    for ref in range(len(references)):
+        references[ref] = references[ref].replace('\\left', '')
+        references[ref] = references[ref].replace('\\right', '')
+        references[ref] = references[ref].replace('^\\circ', '')
+        references[ref] = re.sub(r"\\text{(\w+)}", r"\1", references[ref])
+        references[ref] = references[ref].replace('\\dfrac', '\\frac')
+        
+
+        
+    for pre in range(len(predictions)):
+        predictions[pre] = predictions[pre].replace('\\left', '')
+        predictions[pre] = predictions[pre].replace('\\right', '')
+        predictions[pre] = predictions[pre].replace('^\\circ', '')
+        predictions[pre] = predictions[pre].replace('\\%', '')
+        predictions[pre] = predictions[pre].replace('\\dfrac', '\\frac')
+
     if regexes_to_ignore is not None:
         for s in regexes_to_ignore:
             predictions = np.array([re.sub(s, "", x) for x in predictions])
@@ -202,6 +228,18 @@ def exact_match_hf_evaluate(
     else:
         predictions = np.asarray(predictions)
         references = np.asarray(references)
+    
+    for ref in range(len(references)):
+        #print(id(references[ref]))
+        if references[ref] in replace_dict:
+            ref_tmp = []
+            for r in range(len(references)):
+                if r==ref:
+                    ref_tmp.append(replace_dict[references[ref]])
+                else:
+                    ref_tmp.append(references[r])
+            references = ref_tmp
+            #print(id(references[ref]))
 
     if ignore_case:
         predictions = np.char.lower(predictions)
@@ -216,6 +254,9 @@ def exact_match_hf_evaluate(
         repl_table = string.digits.maketrans("", "", string.digits)
         predictions = np.char.translate(predictions, table=repl_table)
         references = np.char.translate(references, table=repl_table)
+    
+    #print(predictions)
+    #print(references)
 
     score_list = predictions == references
 
