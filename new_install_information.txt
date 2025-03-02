@@ -1,0 +1,399 @@
+root@autodl-container-c5d44faf3d-151a7747:~# git clone --depth 1 https://github.com/hlzonWang/lm-evaluation-harness-math
+cd lm-evaluation-harness-math
+pip install -e .
+pip install -e ."[api]"
+Cloning into 'lm-evaluation-harness-math'...
+remote: Enumerating objects: 8212, done.
+remote: Counting objects: 100% (8212/8212), done.
+remote: Compressing objects: 100% (3095/3095), done.
+remote: Total 8212 (delta 5145), reused 7745 (delta 5092), pack-reused 0 (from 0)
+Receiving objects: 100% (8212/8212), 3.22 MiB | 3.56 MiB/s, done.
+Resolving deltas: 100% (5145/5145), done.
+Updating files: 100% (8081/8081), done.
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Obtaining file:///root/lm-evaluation-harness-math
+  Installing build dependencies ... done
+  Checking if build backend supports build_editable ... done
+  Getting requirements to build editable ... done
+  Preparing editable metadata (pyproject.toml) ... done
+Collecting accelerate>=0.26.0 (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/0a/f6/791b9d7eb371a2f385da3b7f1769ced72ead7bf09744637ea2985c83d7ee/accelerate-1.4.0-py3-none-any.whl (342 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 342.1/342.1 kB 5.6 MB/s eta 0:00:00
+Collecting evaluate (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/a2/e7/cbca9e2d2590eb9b5aa8f7ebabe1beb1498f9462d2ecede5c9fd9735faaf/evaluate-0.4.3-py3-none-any.whl (84 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 84.0/84.0 kB 1.3 MB/s eta 0:00:00
+Collecting datasets>=2.16.0 (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/4c/37/22ef7675bef4ffe9577b937ddca2e22791534cbbe11c30714972a91532dc/datasets-3.3.2-py3-none-any.whl (485 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 485.4/485.4 kB 12.2 MB/s eta 0:00:00
+Collecting jsonlines (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/f8/62/d9ba6323b9202dd2fe166beab8a86d29465c41a0288cbe229fac60c1ab8d/jsonlines-4.0.0-py3-none-any.whl (8.7 kB)
+Collecting numexpr (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/7d/9c/6b671dd3fb67d7e7da93cb76b7c5277743f310a216b7856bb18776bb3371/numexpr-2.10.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (400 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 400.6/400.6 kB 17.9 MB/s eta 0:00:00
+Collecting peft>=0.2.0 (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/88/05/e58e3aaa36544d30a917814e336fc65a746f708e5874945e92999bc22fa3/peft-0.14.0-py3-none-any.whl (374 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 374.8/374.8 kB 1.4 MB/s eta 0:00:00
+Collecting pybind11>=2.6.2 (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/13/2f/0f24b288e2ce56f51c920137620b4434a38fd80583dbbe24fc2a1656c388/pybind11-2.13.6-py3-none-any.whl (243 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.3/243.3 kB 47.9 MB/s eta 0:00:00
+Collecting pytablewriter (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/21/4c/c199512f01c845dfe5a7840ab3aae6c60463b5dc2a775be72502dfd9170a/pytablewriter-1.2.1-py3-none-any.whl (91 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.1/91.1 kB 2.2 MB/s eta 0:00:00
+Collecting rouge-score>=0.0.4 (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/e2/c5/9136736c37022a6ad27fea38f3111eb8f02fe75d067f9a985cc358653102/rouge_score-0.1.2.tar.gz (17 kB)
+  Preparing metadata (setup.py) ... done
+Collecting sacrebleu>=1.5.0 (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/cd/45/7b55a7bd7e5c5b573b40ad58ba43fa09962dc5c8d71b1f573d4aeaa54a7e/sacrebleu-2.5.1-py3-none-any.whl (104 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 104.1/104.1 kB 14.1 MB/s eta 0:00:00
+Collecting scikit-learn>=0.24.1 (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/29/7a/8bce8968883e9465de20be15542f4c7e221952441727c4dad24d534c6d99/scikit_learn-1.6.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 15.4 MB/s eta 0:00:00
+Collecting sqlitedict (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/12/9a/7620d1e9dcb02839ed6d4b14064e609cdd7a8ae1e47289aa0456796dd9ca/sqlitedict-2.1.0.tar.gz (21 kB)
+  Preparing metadata (setup.py) ... done
+Requirement already satisfied: torch>=1.8 in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (2.3.0+cu121)
+Collecting tqdm-multiprocess (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/25/7e/0d889fc6c84e3df6b69aaafe893fc77f69b3d968ac9ce574d1c62c688050/tqdm_multiprocess-0.0.11-py3-none-any.whl (9.8 kB)
+Collecting transformers>=4.1 (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/20/37/1f29af63e9c30156a3ed6ebc2754077016577c094f31de7b2631e5d379eb/transformers-4.49.0-py3-none-any.whl (10.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 11.6 MB/s eta 0:00:00
+Requirement already satisfied: zstandard in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (0.22.0)
+Collecting dill (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/46/d1/e73b6ad76f0b1fb7f23c35c6d95dbc506a9c8804f43dda8cb5b0fa6331fd/dill-0.3.9-py3-none-any.whl (119 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 119.4/119.4 kB 9.0 MB/s eta 0:00:00
+Collecting word2number (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/4a/29/a31940c848521f0725f0df6b25dca8917f13a2025b0e8fcbe5d0457e45e6/word2number-1.1.zip (9.7 kB)
+  Preparing metadata (setup.py) ... done
+Collecting more_itertools (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/23/62/0fe302c6d1be1c777cab0616e6302478251dfbf9055ad426f5d0def75c89/more_itertools-10.6.0-py3-none-any.whl (63 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.0/63.0 kB 9.1 MB/s eta 0:00:00
+Requirement already satisfied: numpy<3.0.0,>=1.17 in /root/miniconda3/lib/python3.12/site-packages (from accelerate>=0.26.0->lm_eval==0.4.7) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in /root/miniconda3/lib/python3.12/site-packages (from accelerate>=0.26.0->lm_eval==0.4.7) (23.2)
+Requirement already satisfied: psutil in /root/miniconda3/lib/python3.12/site-packages (from accelerate>=0.26.0->lm_eval==0.4.7) (5.9.8)
+Requirement already satisfied: pyyaml in /root/miniconda3/lib/python3.12/site-packages (from accelerate>=0.26.0->lm_eval==0.4.7) (6.0.1)
+Collecting huggingface-hub>=0.21.0 (from accelerate>=0.26.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/ae/05/75b90de9093de0aadafc868bb2fa7c57651fd8f45384adf39bd77f63980d/huggingface_hub-0.29.1-py3-none-any.whl (468 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 468.0/468.0 kB 4.0 MB/s eta 0:00:00
+Collecting safetensors>=0.4.3 (from accelerate>=0.26.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/a6/f8/dae3421624fcc87a89d42e1898a798bc7ff72c61f38973a65d60df8f124c/safetensors-0.5.3-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (471 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 471.6/471.6 kB 3.1 MB/s eta 0:00:00
+Requirement already satisfied: filelock in /root/miniconda3/lib/python3.12/site-packages (from datasets>=2.16.0->lm_eval==0.4.7) (3.14.0)
+Collecting pyarrow>=15.0.0 (from datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/27/2e/29bb28a7102a6f71026a9d70d1d61df926887e36ec797f2e6acfd2dd3867/pyarrow-19.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (42.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.1/42.1 MB 12.9 MB/s eta 0:00:00
+Collecting dill (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/c9/7a/cef76fd8438a42f96db64ddaa85280485a9c395e7df3db8158cfec1eee34/dill-0.3.8-py3-none-any.whl (116 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 116.3/116.3 kB 2.7 MB/s eta 0:00:00
+Collecting pandas (from datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/38/f8/d8fddee9ed0d0c0f4a2132c1dfcf0e3e53265055da8df952a53e7eaf178c/pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 13.5 MB/s eta 0:00:00
+Collecting requests>=2.32.2 (from datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/f9/9b/335f9764261e915ed497fcdeb11df5dfd6f7bf257d4a6a2a686d80da4d54/requests-2.32.3-py3-none-any.whl (64 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 25.8 MB/s eta 0:00:00
+Collecting tqdm>=4.66.3 (from datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/d0/30/dc54f88dd4a2b5dc8a0279bdd7270e735851848b762aeb1c1184ed1f6b14/tqdm-4.67.1-py3-none-any.whl (78 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 540.2 kB/s eta 0:00:00
+Collecting xxhash (from datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/11/a7/81dba5010f7e733de88af9555725146fc133be97ce36533867f4c7e75066/xxhash-3.5.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (194 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 194.4/194.4 kB 59.8 MB/s eta 0:00:00
+Collecting multiprocess<0.70.17 (from datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/0a/7d/a988f258104dcd2ccf1ed40fdc97e26c4ac351eeaf81d76e266c52d84e2f/multiprocess-0.70.16-py312-none-any.whl (146 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 146.7/146.7 kB 56.7 MB/s eta 0:00:00
+Requirement already satisfied: fsspec<=2024.12.0,>=2023.1.0 in /root/miniconda3/lib/python3.12/site-packages (from fsspec[http]<=2024.12.0,>=2023.1.0->datasets>=2.16.0->lm_eval==0.4.7) (2024.5.0)
+Collecting aiohttp (from datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/ff/fe/0f650a8c7c72c8a07edf8ab164786f936668acd71786dd5885fc4b1ca563/aiohttp-3.11.13-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 15.9 MB/s eta 0:00:00
+Requirement already satisfied: absl-py in /root/miniconda3/lib/python3.12/site-packages (from rouge-score>=0.0.4->lm_eval==0.4.7) (2.1.0)
+Collecting nltk (from rouge-score>=0.0.4->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/4d/66/7d9e26593edda06e8cb531874633f7c2372279c3b0f46235539fe546df8b/nltk-3.9.1-py3-none-any.whl (1.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 21.0 MB/s eta 0:00:00
+Requirement already satisfied: six>=1.14.0 in /root/miniconda3/lib/python3.12/site-packages (from rouge-score>=0.0.4->lm_eval==0.4.7) (1.16.0)
+Collecting portalocker (from sacrebleu>=1.5.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/f7/60/1974cfdd5bb770568ddc6f89f3e0df4cfdd1acffd5a609dff5e95f48c6e2/portalocker-3.1.1-py3-none-any.whl (19 kB)
+Collecting regex (from sacrebleu>=1.5.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/fb/13/e3b075031a738c9598c51cfbc4c7879e26729c53aa9cca59211c44235314/regex-2024.11.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (796 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 796.9/796.9 kB 10.2 MB/s eta 0:00:00
+Collecting tabulate>=0.8.9 (from sacrebleu>=1.5.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl (35 kB)
+Collecting colorama (from sacrebleu>=1.5.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting lxml (from sacrebleu>=1.5.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/c5/f8/309546aec092434166a6e11c7dcecb5c2d0a787c18c072d61e18da9eba57/lxml-5.3.1-cp312-cp312-manylinux_2_28_x86_64.whl (5.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.0/5.0 MB 20.0 MB/s eta 0:00:00
+Collecting scipy>=1.6.0 (from scikit-learn>=0.24.1->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/c0/53/eaada1a414c026673eb983f8b4a55fe5eb172725d33d62c1b21f63ff6ca4/scipy-1.15.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.3/37.3 MB 9.8 MB/s eta 0:00:00
+Collecting joblib>=1.2.0 (from scikit-learn>=0.24.1->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/91/29/df4b9b42f2be0b623cbd5e2140cafcaa2bef0759a00b7b70104dcfe2fb51/joblib-1.4.2-py3-none-any.whl (301 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 301.8/301.8 kB 5.3 MB/s eta 0:00:00
+Collecting threadpoolctl>=3.1.0 (from scikit-learn>=0.24.1->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl (18 kB)
+Requirement already satisfied: typing-extensions>=4.8.0 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (4.12.1)
+Requirement already satisfied: sympy in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (1.12.1)
+Requirement already satisfied: networkx in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (3.3)
+Requirement already satisfied: jinja2 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (3.1.4)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (8.9.2.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.20.5 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (2.20.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (12.1.105)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /root/miniconda3/lib/python3.12/site-packages (from nvidia-cusolver-cu12==11.4.5.107->torch>=1.8->lm_eval==0.4.7) (12.5.40)
+Collecting tokenizers<0.22,>=0.21 (from transformers>=4.1->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/22/06/69d7ce374747edaf1695a4f61b83570d91cc8bbfc51ccfecf76f56ab4aac/tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 20.6 MB/s eta 0:00:00
+Requirement already satisfied: attrs>=19.2.0 in /root/miniconda3/lib/python3.12/site-packages (from jsonlines->lm_eval==0.4.7) (23.2.0)
+Requirement already satisfied: setuptools>=38.3.0 in /root/miniconda3/lib/python3.12/site-packages (from pytablewriter->lm_eval==0.4.7) (69.5.1)
+Collecting DataProperty<2,>=1.1.0 (from pytablewriter->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/21/c2/e12e95e289e6081a40454199ab213139ef16a528c7c86432de545b05a23a/DataProperty-1.1.0-py3-none-any.whl (27 kB)
+Collecting mbstrdecoder<2,>=1.0.0 (from pytablewriter->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/30/ac/5ce64a1d4cce00390beab88622a290420401f1cabf05caf2fc0995157c21/mbstrdecoder-1.1.4-py3-none-any.whl (7.9 kB)
+Collecting pathvalidate<4,>=2.3.0 (from pytablewriter->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/50/14/c5a0e1a947909810fc4c043b84cac472b70e438148d34f5393be1bac663f/pathvalidate-3.2.3-py3-none-any.whl (24 kB)
+Collecting tabledata<2,>=1.3.1 (from pytablewriter->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/08/64/fa4160151976ee4b2cf0c1217a99443ffaeb991956feddfeac9eee9952f8/tabledata-1.3.4-py3-none-any.whl (11 kB)
+Collecting tcolorpy<1,>=0.0.5 (from pytablewriter->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/05/a2/ed023f2edd1e011b4d99b6727bce8253842d66c3fbf9ed0a26fc09a92571/tcolorpy-0.1.7-py3-none-any.whl (8.1 kB)
+Collecting typepy<2,>=1.3.2 (from typepy[datetime]<2,>=1.3.2->pytablewriter->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/ee/31/e393c3830bdedd01735bd195c85ac3034b6bcaf6c18142bab60a4047ca36/typepy-1.3.4-py3-none-any.whl (31 kB)
+Collecting aiohappyeyeballs>=2.3.0 (from aiohttp->datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/44/4c/03fb05f56551828ec67ceb3665e5dc51638042d204983a03b0a1541475b6/aiohappyeyeballs-2.4.6-py3-none-any.whl (14 kB)
+Collecting aiosignal>=1.1.2 (from aiohttp->datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/ec/6a/bc7e17a3e87a2985d3e8f4da4cd0f481060eb78fb08596c42be62c90a4d9/aiosignal-1.3.2-py2.py3-none-any.whl (7.6 kB)
+Collecting frozenlist>=1.1.1 (from aiohttp->datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/af/f2/64b73a9bb86f5a89fb55450e97cd5c1f84a862d4ff90d9fd1a73ab0f64a5/frozenlist-1.5.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (283 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 283.6/283.6 kB 9.2 MB/s eta 0:00:00
+Collecting multidict<7.0,>=4.5 (from aiohttp->datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/d3/c8/529101d7176fe7dfe1d99604e48d69c5dfdcadb4f06561f465c8ef12b4df/multidict-6.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (131 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.0/131.0 kB 4.3 MB/s eta 0:00:00
+Collecting propcache>=0.2.0 (from aiohttp->datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/9d/c4/ecfc988879c0fd9db03228725b662d76cf484b6b46f7e92fee94e4b52490/propcache-0.3.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (243 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.9/243.9 kB 10.7 MB/s eta 0:00:00
+Collecting yarl<2.0,>=1.17.0 (from aiohttp->datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/1a/e1/a097d5755d3ea8479a42856f51d97eeff7a3a7160593332d98f2709b3580/yarl-1.18.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (336 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 336.9/336.9 kB 27.9 MB/s eta 0:00:00
+Collecting chardet<6,>=3.0.4 (from mbstrdecoder<2,>=1.0.0->pytablewriter->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/38/6f/f5fbc992a329ee4e0f288c1fe0e2ad9485ed064cac731ed2fe47dcc38cbf/chardet-5.2.0-py3-none-any.whl (199 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 199.4/199.4 kB 1.9 MB/s eta 0:00:00
+Requirement already satisfied: charset-normalizer<4,>=2 in /root/miniconda3/lib/python3.12/site-packages (from requests>=2.32.2->datasets>=2.16.0->lm_eval==0.4.7) (2.0.4)
+Requirement already satisfied: idna<4,>=2.5 in /root/miniconda3/lib/python3.12/site-packages (from requests>=2.32.2->datasets>=2.16.0->lm_eval==0.4.7) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /root/miniconda3/lib/python3.12/site-packages (from requests>=2.32.2->datasets>=2.16.0->lm_eval==0.4.7) (2.1.0)
+Requirement already satisfied: certifi>=2017.4.17 in /root/miniconda3/lib/python3.12/site-packages (from requests>=2.32.2->datasets>=2.16.0->lm_eval==0.4.7) (2024.2.2)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.8.0 in /root/miniconda3/lib/python3.12/site-packages (from typepy[datetime]<2,>=1.3.2->pytablewriter->lm_eval==0.4.7) (2.9.0.post0)
+Collecting pytz>=2018.9 (from typepy[datetime]<2,>=1.3.2->pytablewriter->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/eb/38/ac33370d784287baa1c3d538978b5e2ea064d4c1b93ffbd12826c190dd10/pytz-2025.1-py2.py3-none-any.whl (507 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 507.9/507.9 kB 15.3 MB/s eta 0:00:00
+Requirement already satisfied: MarkupSafe>=2.0 in /root/miniconda3/lib/python3.12/site-packages (from jinja2->torch>=1.8->lm_eval==0.4.7) (2.1.5)
+Collecting click (from nltk->rouge-score>=0.0.4->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/7e/d4/7ebdbd03970677812aac39c869717059dbb71a4cfc033ca6e5221787892c/click-8.1.8-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 kB 30.9 MB/s eta 0:00:00
+Collecting tzdata>=2022.7 (from pandas->datasets>=2.16.0->lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/0f/dd/84f10e23edd882c6f968c21c2434fe67bd4a528967067515feca9e611e5e/tzdata-2025.1-py2.py3-none-any.whl (346 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 346.8/346.8 kB 4.6 MB/s eta 0:00:00
+Requirement already satisfied: mpmath<1.4.0,>=1.1.0 in /root/miniconda3/lib/python3.12/site-packages (from sympy->torch>=1.8->lm_eval==0.4.7) (1.3.0)
+Building wheels for collected packages: lm_eval, rouge-score, sqlitedict, word2number
+  Building editable for lm_eval (pyproject.toml) ... done
+  Created wheel for lm_eval: filename=lm_eval-0.4.7-0.editable-py3-none-any.whl size=9908 sha256=ce7a47fe86af4e3339c9169a1b19988946e98660e70abea266dab2492999a4a7
+  Stored in directory: /tmp/pip-ephem-wheel-cache-qtutewno/wheels/dc/ba/78/c13dbb92c889cea7c8b3ef0d8acf62131087e35801acd327b1
+  Building wheel for rouge-score (setup.py) ... done
+  Created wheel for rouge-score: filename=rouge_score-0.1.2-py3-none-any.whl size=24934 sha256=0dcd11fbc48eb66de73fe45ea9be8934b62a1264cc3169d78912d4dfc2f14e5c
+  Stored in directory: /root/.cache/pip/wheels/b4/5c/8c/1db861e2b281d70ba4f03bbb6d21a7764db32456cc93398bd0
+  Building wheel for sqlitedict (setup.py) ... done
+  Created wheel for sqlitedict: filename=sqlitedict-2.1.0-py3-none-any.whl size=16862 sha256=2e6fa61551580fcaeb33089d9869078efbbacd55fbc27d2bf00720ab73b5af58
+  Stored in directory: /root/.cache/pip/wheels/a0/73/fe/f83fcbe3252c569dcc0e2fb29fd099d096a16eacc99bafa2d8
+  Building wheel for word2number (setup.py) ... done
+  Created wheel for word2number: filename=word2number-1.1-py3-none-any.whl size=5566 sha256=67c9ae1d23289fad2ef2862f17f1131b80003f8799678ed6f03036fc00995543
+  Stored in directory: /root/.cache/pip/wheels/05/cd/f8/76058f3da0e2062eb6a5189484562766d81dad54c670fa3b7c
+Successfully built lm_eval rouge-score sqlitedict word2number
+Installing collected packages: word2number, sqlitedict, pytz, xxhash, tzdata, tqdm, threadpoolctl, tcolorpy, tabulate, scipy, safetensors, requests, regex, pybind11, pyarrow, propcache, portalocker, pathvalidate, numexpr, multidict, more_itertools, lxml, jsonlines, joblib, frozenlist, dill, colorama, click, chardet, aiohappyeyeballs, yarl, tqdm-multiprocess, scikit-learn, sacrebleu, pandas, nltk, multiprocess, mbstrdecoder, huggingface-hub, aiosignal, typepy, tokenizers, rouge-score, aiohttp, transformers, accelerate, peft, datasets, DataProperty, tabledata, evaluate, pytablewriter, lm_eval
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.66.2
+    Uninstalling tqdm-4.66.2:
+      Successfully uninstalled tqdm-4.66.2
+  Attempting uninstall: requests
+    Found existing installation: requests 2.31.0
+    Uninstalling requests-2.31.0:
+      Successfully uninstalled requests-2.31.0
+Successfully installed DataProperty-1.1.0 accelerate-1.4.0 aiohappyeyeballs-2.4.6 aiohttp-3.11.13 aiosignal-1.3.2 chardet-5.2.0 click-8.1.8 colorama-0.4.6 datasets-3.3.2 dill-0.3.8 evaluate-0.4.3 frozenlist-1.5.0 huggingface-hub-0.29.1 joblib-1.4.2 jsonlines-4.0.0 lm_eval-0.4.7 lxml-5.3.1 mbstrdecoder-1.1.4 more_itertools-10.6.0 multidict-6.1.0 multiprocess-0.70.16 nltk-3.9.1 numexpr-2.10.2 pandas-2.2.3 pathvalidate-3.2.3 peft-0.14.0 portalocker-3.1.1 propcache-0.3.0 pyarrow-19.0.1 pybind11-2.13.6 pytablewriter-1.2.1 pytz-2025.1 regex-2024.11.6 requests-2.32.3 rouge-score-0.1.2 sacrebleu-2.5.1 safetensors-0.5.3 scikit-learn-1.6.1 scipy-1.15.2 sqlitedict-2.1.0 tabledata-1.3.4 tabulate-0.9.0 tcolorpy-0.1.7 threadpoolctl-3.5.0 tokenizers-0.21.0 tqdm-4.67.1 tqdm-multiprocess-0.0.11 transformers-4.49.0 typepy-1.3.4 tzdata-2025.1 word2number-1.1 xxhash-3.5.0 yarl-1.18.3
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Obtaining file:///root/lm-evaluation-harness-math
+  Installing build dependencies ... done
+  Checking if build backend supports build_editable ... done
+  Getting requirements to build editable ... done
+  Preparing editable metadata (pyproject.toml) ... done
+Requirement already satisfied: accelerate>=0.26.0 in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (1.4.0)
+Requirement already satisfied: evaluate in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (0.4.3)
+Requirement already satisfied: datasets>=2.16.0 in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (3.3.2)
+Requirement already satisfied: jsonlines in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (4.0.0)
+Requirement already satisfied: numexpr in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (2.10.2)
+Requirement already satisfied: peft>=0.2.0 in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (0.14.0)
+Requirement already satisfied: pybind11>=2.6.2 in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (2.13.6)
+Requirement already satisfied: pytablewriter in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (1.2.1)
+Requirement already satisfied: rouge-score>=0.0.4 in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (0.1.2)
+Requirement already satisfied: sacrebleu>=1.5.0 in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (2.5.1)
+Requirement already satisfied: scikit-learn>=0.24.1 in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (1.6.1)
+Requirement already satisfied: sqlitedict in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (2.1.0)
+Requirement already satisfied: torch>=1.8 in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (2.3.0+cu121)
+Requirement already satisfied: tqdm-multiprocess in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (0.0.11)
+Requirement already satisfied: transformers>=4.1 in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (4.49.0)
+Requirement already satisfied: zstandard in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (0.22.0)
+Requirement already satisfied: dill in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (0.3.8)
+Requirement already satisfied: word2number in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (1.1)
+Requirement already satisfied: more_itertools in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (10.6.0)
+Requirement already satisfied: requests in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (2.32.3)
+Requirement already satisfied: aiohttp in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (3.11.13)
+Collecting tenacity (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/b6/cb/b86984bed139586d01532a587464b5805f12e397594f19f931c4c2fbfa61/tenacity-9.0.0-py3-none-any.whl (28 kB)
+Requirement already satisfied: tqdm in /root/miniconda3/lib/python3.12/site-packages (from lm_eval==0.4.7) (4.67.1)
+Collecting tiktoken (from lm_eval==0.4.7)
+  Downloading http://mirrors.aliyun.com/pypi/packages/1b/40/da42522018ca496432ffd02793c3a72a739ac04c3794a4914570c9bb2925/tiktoken-0.9.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 15.6 MB/s eta 0:00:00
+Requirement already satisfied: numpy<3.0.0,>=1.17 in /root/miniconda3/lib/python3.12/site-packages (from accelerate>=0.26.0->lm_eval==0.4.7) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in /root/miniconda3/lib/python3.12/site-packages (from accelerate>=0.26.0->lm_eval==0.4.7) (23.2)
+Requirement already satisfied: psutil in /root/miniconda3/lib/python3.12/site-packages (from accelerate>=0.26.0->lm_eval==0.4.7) (5.9.8)
+Requirement already satisfied: pyyaml in /root/miniconda3/lib/python3.12/site-packages (from accelerate>=0.26.0->lm_eval==0.4.7) (6.0.1)
+Requirement already satisfied: huggingface-hub>=0.21.0 in /root/miniconda3/lib/python3.12/site-packages (from accelerate>=0.26.0->lm_eval==0.4.7) (0.29.1)
+Requirement already satisfied: safetensors>=0.4.3 in /root/miniconda3/lib/python3.12/site-packages (from accelerate>=0.26.0->lm_eval==0.4.7) (0.5.3)
+Requirement already satisfied: filelock in /root/miniconda3/lib/python3.12/site-packages (from datasets>=2.16.0->lm_eval==0.4.7) (3.14.0)
+Requirement already satisfied: pyarrow>=15.0.0 in /root/miniconda3/lib/python3.12/site-packages (from datasets>=2.16.0->lm_eval==0.4.7) (19.0.1)
+Requirement already satisfied: pandas in /root/miniconda3/lib/python3.12/site-packages (from datasets>=2.16.0->lm_eval==0.4.7) (2.2.3)
+Requirement already satisfied: xxhash in /root/miniconda3/lib/python3.12/site-packages (from datasets>=2.16.0->lm_eval==0.4.7) (3.5.0)
+Requirement already satisfied: multiprocess<0.70.17 in /root/miniconda3/lib/python3.12/site-packages (from datasets>=2.16.0->lm_eval==0.4.7) (0.70.16)
+Requirement already satisfied: fsspec<=2024.12.0,>=2023.1.0 in /root/miniconda3/lib/python3.12/site-packages (from fsspec[http]<=2024.12.0,>=2023.1.0->datasets>=2.16.0->lm_eval==0.4.7) (2024.5.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /root/miniconda3/lib/python3.12/site-packages (from requests->lm_eval==0.4.7) (2.0.4)
+Requirement already satisfied: idna<4,>=2.5 in /root/miniconda3/lib/python3.12/site-packages (from requests->lm_eval==0.4.7) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /root/miniconda3/lib/python3.12/site-packages (from requests->lm_eval==0.4.7) (2.1.0)
+Requirement already satisfied: certifi>=2017.4.17 in /root/miniconda3/lib/python3.12/site-packages (from requests->lm_eval==0.4.7) (2024.2.2)
+Requirement already satisfied: absl-py in /root/miniconda3/lib/python3.12/site-packages (from rouge-score>=0.0.4->lm_eval==0.4.7) (2.1.0)
+Requirement already satisfied: nltk in /root/miniconda3/lib/python3.12/site-packages (from rouge-score>=0.0.4->lm_eval==0.4.7) (3.9.1)
+Requirement already satisfied: six>=1.14.0 in /root/miniconda3/lib/python3.12/site-packages (from rouge-score>=0.0.4->lm_eval==0.4.7) (1.16.0)
+Requirement already satisfied: portalocker in /root/miniconda3/lib/python3.12/site-packages (from sacrebleu>=1.5.0->lm_eval==0.4.7) (3.1.1)
+Requirement already satisfied: regex in /root/miniconda3/lib/python3.12/site-packages (from sacrebleu>=1.5.0->lm_eval==0.4.7) (2024.11.6)
+Requirement already satisfied: tabulate>=0.8.9 in /root/miniconda3/lib/python3.12/site-packages (from sacrebleu>=1.5.0->lm_eval==0.4.7) (0.9.0)
+Requirement already satisfied: colorama in /root/miniconda3/lib/python3.12/site-packages (from sacrebleu>=1.5.0->lm_eval==0.4.7) (0.4.6)
+Requirement already satisfied: lxml in /root/miniconda3/lib/python3.12/site-packages (from sacrebleu>=1.5.0->lm_eval==0.4.7) (5.3.1)
+Requirement already satisfied: scipy>=1.6.0 in /root/miniconda3/lib/python3.12/site-packages (from scikit-learn>=0.24.1->lm_eval==0.4.7) (1.15.2)
+Requirement already satisfied: joblib>=1.2.0 in /root/miniconda3/lib/python3.12/site-packages (from scikit-learn>=0.24.1->lm_eval==0.4.7) (1.4.2)
+Requirement already satisfied: threadpoolctl>=3.1.0 in /root/miniconda3/lib/python3.12/site-packages (from scikit-learn>=0.24.1->lm_eval==0.4.7) (3.5.0)
+Requirement already satisfied: typing-extensions>=4.8.0 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (4.12.1)
+Requirement already satisfied: sympy in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (1.12.1)
+Requirement already satisfied: networkx in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (3.3)
+Requirement already satisfied: jinja2 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (3.1.4)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (8.9.2.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.20.5 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (2.20.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /root/miniconda3/lib/python3.12/site-packages (from torch>=1.8->lm_eval==0.4.7) (12.1.105)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /root/miniconda3/lib/python3.12/site-packages (from nvidia-cusolver-cu12==11.4.5.107->torch>=1.8->lm_eval==0.4.7) (12.5.40)
+Requirement already satisfied: tokenizers<0.22,>=0.21 in /root/miniconda3/lib/python3.12/site-packages (from transformers>=4.1->lm_eval==0.4.7) (0.21.0)
+Requirement already satisfied: aiohappyeyeballs>=2.3.0 in /root/miniconda3/lib/python3.12/site-packages (from aiohttp->lm_eval==0.4.7) (2.4.6)
+Requirement already satisfied: aiosignal>=1.1.2 in /root/miniconda3/lib/python3.12/site-packages (from aiohttp->lm_eval==0.4.7) (1.3.2)
+Requirement already satisfied: attrs>=17.3.0 in /root/miniconda3/lib/python3.12/site-packages (from aiohttp->lm_eval==0.4.7) (23.2.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /root/miniconda3/lib/python3.12/site-packages (from aiohttp->lm_eval==0.4.7) (1.5.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /root/miniconda3/lib/python3.12/site-packages (from aiohttp->lm_eval==0.4.7) (6.1.0)
+Requirement already satisfied: propcache>=0.2.0 in /root/miniconda3/lib/python3.12/site-packages (from aiohttp->lm_eval==0.4.7) (0.3.0)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /root/miniconda3/lib/python3.12/site-packages (from aiohttp->lm_eval==0.4.7) (1.18.3)
+Requirement already satisfied: setuptools>=38.3.0 in /root/miniconda3/lib/python3.12/site-packages (from pytablewriter->lm_eval==0.4.7) (69.5.1)
+Requirement already satisfied: DataProperty<2,>=1.1.0 in /root/miniconda3/lib/python3.12/site-packages (from pytablewriter->lm_eval==0.4.7) (1.1.0)
+Requirement already satisfied: mbstrdecoder<2,>=1.0.0 in /root/miniconda3/lib/python3.12/site-packages (from pytablewriter->lm_eval==0.4.7) (1.1.4)
+Requirement already satisfied: pathvalidate<4,>=2.3.0 in /root/miniconda3/lib/python3.12/site-packages (from pytablewriter->lm_eval==0.4.7) (3.2.3)
+Requirement already satisfied: tabledata<2,>=1.3.1 in /root/miniconda3/lib/python3.12/site-packages (from pytablewriter->lm_eval==0.4.7) (1.3.4)
+Requirement already satisfied: tcolorpy<1,>=0.0.5 in /root/miniconda3/lib/python3.12/site-packages (from pytablewriter->lm_eval==0.4.7) (0.1.7)
+Requirement already satisfied: typepy<2,>=1.3.2 in /root/miniconda3/lib/python3.12/site-packages (from typepy[datetime]<2,>=1.3.2->pytablewriter->lm_eval==0.4.7) (1.3.4)
+Requirement already satisfied: chardet<6,>=3.0.4 in /root/miniconda3/lib/python3.12/site-packages (from mbstrdecoder<2,>=1.0.0->pytablewriter->lm_eval==0.4.7) (5.2.0)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.8.0 in /root/miniconda3/lib/python3.12/site-packages (from typepy[datetime]<2,>=1.3.2->pytablewriter->lm_eval==0.4.7) (2.9.0.post0)
+Requirement already satisfied: pytz>=2018.9 in /root/miniconda3/lib/python3.12/site-packages (from typepy[datetime]<2,>=1.3.2->pytablewriter->lm_eval==0.4.7) (2025.1)
+Requirement already satisfied: MarkupSafe>=2.0 in /root/miniconda3/lib/python3.12/site-packages (from jinja2->torch>=1.8->lm_eval==0.4.7) (2.1.5)
+Requirement already satisfied: click in /root/miniconda3/lib/python3.12/site-packages (from nltk->rouge-score>=0.0.4->lm_eval==0.4.7) (8.1.8)
+Requirement already satisfied: tzdata>=2022.7 in /root/miniconda3/lib/python3.12/site-packages (from pandas->datasets>=2.16.0->lm_eval==0.4.7) (2025.1)
+Requirement already satisfied: mpmath<1.4.0,>=1.1.0 in /root/miniconda3/lib/python3.12/site-packages (from sympy->torch>=1.8->lm_eval==0.4.7) (1.3.0)
+Checking if build backend supports build_editable ... done
+Building wheels for collected packages: lm_eval
+  Building editable for lm_eval (pyproject.toml) ... done
+  Created wheel for lm_eval: filename=lm_eval-0.4.7-0.editable-py3-none-any.whl size=9908 sha256=79c72be6ce5a6ecff6ea52855625b69433bee79c7e6162cb53b3b0f1a1410981
+  Stored in directory: /tmp/pip-ephem-wheel-cache-bbfxw9tn/wheels/dc/ba/78/c13dbb92c889cea7c8b3ef0d8acf62131087e35801acd327b1
+Successfully built lm_eval
+Installing collected packages: tenacity, tiktoken, lm_eval
+  Attempting uninstall: lm_eval
+    Found existing installation: lm_eval 0.4.7
+    Uninstalling lm_eval-0.4.7:
+      Successfully uninstalled lm_eval-0.4.7
+Successfully installed lm_eval-0.4.7 tenacity-9.0.0 tiktoken-0.9.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+
+root@autodl-container-c5d44faf3d-151a7747:~/lm-evaluation-harness-math# pip install openai
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Collecting openai
+  Downloading http://mirrors.aliyun.com/pypi/packages/2c/3b/722ed868cb56f70264190ed479b38b3e46d14daa267d559a3fe3bd9061cf/openai-1.65.2-py3-none-any.whl (473 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 473.2/473.2 kB 3.1 MB/s eta 0:00:00
+Requirement already satisfied: anyio<5,>=3.5.0 in /root/miniconda3/lib/python3.12/site-packages (from openai) (4.4.0)
+Requirement already satisfied: distro<2,>=1.7.0 in /root/miniconda3/lib/python3.12/site-packages (from openai) (1.9.0)
+Requirement already satisfied: httpx<1,>=0.23.0 in /root/miniconda3/lib/python3.12/site-packages (from openai) (0.27.0)
+Collecting jiter<1,>=0.4.0 (from openai)
+  Downloading http://mirrors.aliyun.com/pypi/packages/17/61/beea645c0bf398ced8b199e377b61eb999d8e46e053bb285c91c3d3eaab0/jiter-0.8.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (345 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 345.5/345.5 kB 7.2 MB/s eta 0:00:00
+Collecting pydantic<3,>=1.9.0 (from openai)
+  Downloading http://mirrors.aliyun.com/pypi/packages/f4/3c/8cc1cc84deffa6e25d2d0c688ebb80635dfdbf1dbea3e30c541c8cf4d860/pydantic-2.10.6-py3-none-any.whl (431 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 431.7/431.7 kB 4.2 MB/s eta 0:00:00
+Requirement already satisfied: sniffio in /root/miniconda3/lib/python3.12/site-packages (from openai) (1.3.1)
+Requirement already satisfied: tqdm>4 in /root/miniconda3/lib/python3.12/site-packages (from openai) (4.67.1)
+Requirement already satisfied: typing-extensions<5,>=4.11 in /root/miniconda3/lib/python3.12/site-packages (from openai) (4.12.1)
+Requirement already satisfied: idna>=2.8 in /root/miniconda3/lib/python3.12/site-packages (from anyio<5,>=3.5.0->openai) (3.7)
+Requirement already satisfied: certifi in /root/miniconda3/lib/python3.12/site-packages (from httpx<1,>=0.23.0->openai) (2024.2.2)
+Requirement already satisfied: httpcore==1.* in /root/miniconda3/lib/python3.12/site-packages (from httpx<1,>=0.23.0->openai) (1.0.5)
+Requirement already satisfied: h11<0.15,>=0.13 in /root/miniconda3/lib/python3.12/site-packages (from httpcore==1.*->httpx<1,>=0.23.0->openai) (0.14.0)
+Collecting annotated-types>=0.6.0 (from pydantic<3,>=1.9.0->openai)
+  Downloading http://mirrors.aliyun.com/pypi/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Collecting pydantic-core==2.27.2 (from pydantic<3,>=1.9.0->openai)
+  Downloading http://mirrors.aliyun.com/pypi/packages/8d/f0/49129b27c43396581a635d8710dae54a791b17dfc50c70164866bbf865e3/pydantic_core-2.27.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 6.2 MB/s eta 0:00:00
+Collecting typing-extensions<5,>=4.11 (from openai)
+  Downloading http://mirrors.aliyun.com/pypi/packages/26/9f/ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0/typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Installing collected packages: typing-extensions, jiter, annotated-types, pydantic-core, pydantic, openai
+  Attempting uninstall: typing-extensions
+    Found existing installation: typing_extensions 4.12.1
+    Uninstalling typing_extensions-4.12.1:
+      Successfully uninstalled typing_extensions-4.12.1
+Successfully installed annotated-types-0.7.0 jiter-0.8.2 openai-1.65.2 pydantic-2.10.6 pydantic-core-2.27.2 typing-extensions-4.12.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+
+root@autodl-container-c5d44faf3d-151a7747:~/lm-evaluation-harness-math# HF_ENDPOINT=https://hf-mirror.com OPENAI_API_KEY=sk-89a9f795b395486cacac90de4063b2b1 lm_eval --model openai-chat-completions     --model_args model=deepseek-reasoner,timeout=30,max_retries=10 --limit 500    --tasks math-500 --apply_chat_template --num_fewshot 0 --log_sample --output_path ../result_math500_deepseekr1 --use_cache ./cache/cache.db --cache_requests true
+2025-03-02:23:37:59,321 WARNING  [lm_eval.__main__:316]  --limit SHOULD ONLY BE USED FOR TESTING.REAL METRICS SHOULD NOT BE COMPUTED USING LIMIT.
+2025-03-02:23:37:59,322 INFO     [lm_eval.__main__:379] Selected Tasks: ['math-500']
+2025-03-02:23:37:59,324 INFO     [lm_eval.evaluator:169] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234 | Setting fewshot manual seed to 1234
+2025-03-02:23:37:59,324 INFO     [lm_eval.evaluator:206] Initializing openai-chat-completions model, with arguments: {'model': 'deepseek-reasoner', 'timeout': 30, 'max_retries': 10}
+2025-03-02:23:37:59,324 WARNING  [lm_eval.models.openai_completions:117] chat-completions endpoint requires the `--apply_chat_template` flag.
+2025-03-02:23:37:59,324 INFO     [lm_eval.models.api_models:117] Using max length 2048 - 1
+2025-03-02:23:37:59,324 INFO     [lm_eval.models.api_models:120] Concurrent requests are disabled. To enable concurrent requests, set `num_concurrent` > 1.
+2025-03-02:23:37:59,324 INFO     [lm_eval.models.api_models:135] Using tokenizer None
+2025-03-02:23:37:59,408 INFO     [lm_eval.evaluator:226] Using cache at ./cache/cache.db_rank0.db
+README.md: 100%|██████████████████████████████████████████████████████████████████████████| 412/412 [00:00<00:00, 2.41MB/s]
+test.jsonl: 447kB [00:03, 119kB/s]
+Generating test split: 500 examples [00:00, 31376.64 examples/s]
+2025-03-02:23:38:11,298 WARNING  [lm_eval.api.task:327] [Task: math-500] has_training_docs and has_validation_docs are False, using test_docs as fewshot_docs but this is not recommended.
+2025-03-02:23:38:11,298 WARNING  [lm_eval.api.task:327] [Task: math-500] has_training_docs and has_validation_docs are False, using test_docs as fewshot_docs but this is not recommended.
+2025-03-02:23:38:11,699 INFO     [lm_eval.evaluator:271] num_fewshot has been set to 0 for math-500 in its config. Manual configuration will be ignored.
+2025-03-02:23:38:11,700 WARNING  [lm_eval.evaluator:421] Chat template formatting change affects loglikelihood and multiple-choice tasks. See docs/chat-template-readme.md for details.
+2025-03-02:23:38:11,700 INFO     [lm_eval.api.task:420] Building contexts for math-500 on rank 0...
+100%|███████████████████████████████████████████████████████████████████████████████████| 500/500 [00:00<00:00, 723.73it/s]
+2025-03-02:23:38:12,826 INFO     [lm_eval.evaluator:517] Running generate_until requests
+2025-03-02:23:38:12,827 INFO     [lm_eval.api.model:261] Loading 'generate_until' responses from cache './cache/cache.db_rank0.db' where possible...
+Checking cached requests: 100%|████████████████████████████████████████████████████████| 500/500 [00:00<00:00, 1825.24it/s]
+2025-03-02:23:38:13,101 INFO     [lm_eval.api.model:285] Cached requests: 0, Requests remaining: 500
+Requesting API:   0%|                                                                              | 0/500 [00:00<?, ?it/s]2025-03-02:23:38:13,106 INFO     [lm_eval.models.api_models:622] Tokenized requests are disabled. Context + generation length is not checked.
+2025-03-02:23:38:13,106 WARNING  [lm_eval.models.api_models:293] Cannot determine EOS string to pass to stop sequence. Manually set by passing `eos_string` to model_args.
+2025-03-02:23:38:14,200 INFO     [httpx:1026] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+Requesting API:   0%|▏                                                                   | 1/500 [00:58<8:07:11, 58.58s/it]2025-03-02:23:39:11,685 INFO     [lm_eval.models.api_models:622] Tokenized requests are disabled. Context + generation length is not checked.
+2025-03-02:23:39:12,497 INFO     [httpx:1026] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
