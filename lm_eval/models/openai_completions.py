@@ -1,5 +1,6 @@
 import logging
 import os
+import json
 from functools import cached_property
 from operator import itemgetter
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -165,6 +166,7 @@ class LocalChatCompletion(LocalCompletionsAPI):
         if not isinstance(outputs, list):
             outputs = [outputs]
         for out in outputs:
+            out = json.loads(out)
             tmp = [None] * len(out["choices"])
             for choices in out["choices"]:
                 tmp[choices["index"]] = choices["message"]["content"]
@@ -192,7 +194,7 @@ class LocalChatCompletion(LocalCompletionsAPI):
 class OpenAICompletionsAPI(LocalCompletionsAPI):
     def __init__(
         self,
-        base_url="https://api.openai.com/v1/completions",
+        base_url="https://api.deepseek.com/v1",
         tokenizer_backend="tiktoken",
         **kwargs,
     ):
@@ -227,7 +229,7 @@ class OpenAICompletionsAPI(LocalCompletionsAPI):
 class OpenAIChatCompletion(LocalChatCompletion):
     def __init__(
         self,
-        base_url="https://api.openai.com/v1/chat/completions",
+        base_url="https://api.deepseek.com/v1",
         tokenizer_backend=None,
         tokenized_requests=False,
         **kwargs,
