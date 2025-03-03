@@ -60,6 +60,23 @@ You should to replace \<Your DeepSeek API key> to your deepseek api key. The api
 [DeepSeek | 深度求索](https://www.deepseek.com/)
 
 
+You can use Kimi API. Replace api.deepseek.com to api.moonshot.cn/v1.Use follow command.
+```bash
+HF_ENDPOINT=https://hf-mirror.com OPENAI_API_KEY=<Your Kimi API key> lm_eval \
+--model openai-chat-completions     \
+--model_args model=kimi-latest,timeout=30,max_retries=10 \
+--limit 500    \
+--tasks math-500 \
+--apply_chat_template \
+--num_fewshot 0 \
+--log_sample \
+--output_path ../result_math500_kimi \
+--use_cache ./cache/cache.db \
+--cache_requests true
+```
+
+
+
 ### Final Result
 DeepSeek R1 MATH-500 accuracy is 97.0%(It was 94.4% before correction). This can be found in the deepseek-r1-result.
 
